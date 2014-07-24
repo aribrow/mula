@@ -1,0 +1,15 @@
+
+
+curl -sS https://getcomposer.org/installer | php
+
+php composer.phar install
+
+http://doctrine-orm.readthedocs.org/en/latest/reference/configuration.html
+
+http://doctrine-orm.readthedocs.org/en/latest/tutorials/getting-started.html
+http://docs.doctrine-project.org/en/2.1/tutorials/getting-started-xml-edition.html
+
+http://marco-pivetta.com/doctrine2-orm-tutorial/#25
+
+
+http://leafo.net/lessphp/#composer
