@@ -1,0 +1,80 @@
+History:
+    type: entity
+    table: history
+    indexes:
+        id_source:
+            columns:
+                - source
+        id_batch:
+            columns:
+                - batch
+        id_container:
+            columns:
+                - container
+        id_status:
+            columns:
+                - status
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        details:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+        dateIn:
+            type: datetime
+            nullable: true
+            comment: ''
+            column: date_in
+        dateOut:
+            type: datetime
+            nullable: true
+            comment: ''
+            column: date_out
+    manyToOne:
+        batch:
+            targetEntity: Batch
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                batch:
+                    referencedColumnName: id
+            orphanRemoval: false
+        status:
+            targetEntity: Status
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                status:
+                    referencedColumnName: id
+            orphanRemoval: false
+        source:
+            targetEntity: History
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                source:
+                    referencedColumnName: id
+            orphanRemoval: false
+        container:
+            targetEntity: Container
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                container:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

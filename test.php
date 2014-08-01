@@ -12,7 +12,4 @@ $entityManager->persist($client);
 $entityManager->flush();
 
 
-
-
-
 echo json_encode($response);

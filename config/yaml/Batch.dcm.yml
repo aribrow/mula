@@ -1,0 +1,44 @@
+Batch:
+    type: entity
+    table: batch
+    indexes:
+        fk_batch_beer_type_idx:
+            columns:
+                - type
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        details:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+        dateIn:
+            type: datetime
+            nullable: true
+            comment: ''
+            column: date_in
+        dateOut:
+            type: datetime
+            nullable: true
+            comment: ''
+            column: date_out
+    manyToOne:
+        type:
+            targetEntity: BeerType
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                type:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

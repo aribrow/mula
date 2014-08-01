@@ -1,0 +1,35 @@
+Container:
+    type: entity
+    table: container
+    uniqueConstraints:
+        code_UNIQUE:
+            columns:
+                - code
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        code:
+            type: string
+            nullable: true
+            length: 16
+            fixed: false
+            comment: ''
+        capacity:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        details:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+    lifecycleCallbacks: {  }
